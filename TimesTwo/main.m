@@ -10,8 +10,15 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        NSDate *currentTime = [NSDate date];
+        NSLog(@"currentTime's value is %p", currentTime);
+        NSDate *startTime = currentTime;
+        
+        sleep(2);
+        
+        currentTime = nil;
+        NSLog(@"currentTime's value is now %p", currentTime);
+        NSLog(@"The address of the original object is %p", startTime);
     }
     return 0;
 }
